@@ -74,12 +74,6 @@ jobs:
           publish_dir: ./output
           cname: knowledge.noghartt.dev
 
-      - name: Upload static files as artifact
-        id: deployment
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./output/
-
   deploy:
     environment:
       name: github-pages
