@@ -66,13 +66,11 @@ jobs:
         if: failure()
         uses: lhotari/action-upterm@v1
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
-          cname: knowledge.noghartt.dev
+          path: ./output/
 
   deploy:
     environment:
