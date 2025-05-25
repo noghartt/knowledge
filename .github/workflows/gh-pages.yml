@@ -73,7 +73,7 @@ jobs:
           path: ./output/
 
   deploy:
-    needs: builds
+    needs: build
 
     permissions:
       pages: write
